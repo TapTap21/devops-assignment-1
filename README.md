@@ -17,10 +17,10 @@ For the first project we won't focus too much on security.
 4. Dockerize the service and add everything to a docker-compose file
 
 ### Phase 2
-1. Create another, different, flask service that saves names and phone numbers (assume unique)
-   1. When a name is queried to the 1st service, that service should communicate with this service to get the associated phone number of a name.
+1. Create another, different, python service asynchronously writes phones numbers linked to names+surnames
+   1. When adding a name+username, add an additional field to the 1st service to add numbers.
    2. Communication between services should happen with a broker based system. I suggest using rabbitmq.
-   3. Add an endpoint to also save phone numbers in this service
+   3. Modify the first service to also fetch the associated number when queried with the name.
 2. The rabbitmq broker should be deployed in docker
 3. Add everything to the docker-compose. The 2 python services should be 2 separate containers running.
 
